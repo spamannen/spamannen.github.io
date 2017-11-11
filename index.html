@@ -1,8 +1,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
+    testCounter = 0
     resp = undefined;
-    while (resp == undefined)    {
+    while (resp.responseText == undefined && testCounter < 30)    {
         var resp = $.ajax({
             dataType: "text",
             type: "GET",
@@ -11,6 +12,7 @@
             },
             async: false
         });
+        testCounter += 1;
     }
 
     _csrfToken = resp.responseText.split("?csrfToken=")[1].split(">")[0]
