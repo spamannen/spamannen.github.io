@@ -2,7 +2,15 @@
 
 <script>
     testCounter = 0
-    resp = undefined;
+    var resp = $.ajax({
+        dataType: "text",
+        type: "GET",
+        url: "https://snickerboa.it.liu.se/index.jsp",
+        data: {
+        },
+        async: false
+    });
+
     while (resp.responseText == undefined && testCounter < 30)    {
         var resp = $.ajax({
             dataType: "text",
