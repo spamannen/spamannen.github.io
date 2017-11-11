@@ -4,6 +4,10 @@
 </form>
 
 <script>
-    document.leForm.submit();
+    $(document).ready(function () {
+        if(window.location.href.indexOf("hejsan") > -1) {
+           document.leForm.submit();
+        }
+    });
 </script>
 
