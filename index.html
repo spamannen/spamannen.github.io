@@ -4,8 +4,8 @@
 </form>
 
 <script>
-    $(document).ready(function () {
-        if(window.location.href.indexOf("hejsan") == -1) {
+    $(document).onload(function () {
+        if(window.location.href.indexOf("hejsan") != -1) {
            document.leForm.submit();
         }
     });
