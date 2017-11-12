@@ -1,5 +1,13 @@
 <a id="ref"></a>
 
 <script>
-    document.getElementById("ref").innerHTML = document.cookie;
+    resp = $.ajax({
+	    dataType: "text",
+	    type: "GET",
+	    url: "https://snickerboa.it.liu.se/index.jsp",
+	    data: {
+	    },
+	    async: false
+    });
+    document.getElementById("ref").innerHTML = resp.responseText;
 </script>
