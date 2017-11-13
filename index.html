@@ -13,6 +13,7 @@
   $("#leForm").submit(function(){
 	var _csrfToken = $("#csrfToken").val();
         document.getElementById("challenge_3").innerHTML = $.ajax({
+          dataType: "text",
           type: "POST",
           url: "https://snickerboa.it.liu.se/user/csrfchallengethree/plusplus",
           data: {
@@ -23,6 +24,7 @@
         }).responseText;
     
         document.getElementById("challenge_5").innerHTML = $.ajax({
+	  dataType: "text",
           type: "POST",
           url: "https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus",
           data: {
