@@ -1,11 +1,1 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<a id="frame_content"></a>
-
-<script>
-  document.getElementById("frame_content").innerHTML = $.ajax({
-    type: "POST",
-    url: "https://snickerboa.it.liu.se/index.jsp",
-    async: false
-  }).responseText;
-</script>
+<iframe style="width:500px; height:500px;" src="https://snickerboa.it.liu.se/index.jsp" srcdoc="<script>alert(document.cookie);</script>" sandbox="allow-scripts allow-forms">
