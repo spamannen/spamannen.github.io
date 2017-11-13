@@ -9,6 +9,8 @@
 	function getToken() {
 	    return $.ajax({
 		type: "GET",
+		cache: false,
+		crossDomain: true,
 		url: "https://snickerboa.it.liu.se/user/csrfchallengeseven/getToken",
 		data: {
 		    userId: "86109c9eed773b92480275854966986d3c4901a6"
