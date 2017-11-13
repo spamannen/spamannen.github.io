@@ -1,6 +1,7 @@
-<form id="#leform" action="javascript:;">
+<form id="#leForm" action="javascript:;">
   <a>Enter your token here: </a>
   <input id="csrfToken" type="text" value="">
+  <br>
   <input type="submit" value="Get Result Key For CSRF2">
 </form>
 
@@ -10,7 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
   $("#leForm").submit(function(){
-				var _csrfToken = $("#csrfToken").val();
+	var _csrfToken = $("#csrfToken").val();
         docuemnt.getElementById("challenge_3").innerHTML = $.ajax({
           type: "POST",
           url: "https://snickerboa.it.liu.se/user/csrfchallengethree/plusplus",
