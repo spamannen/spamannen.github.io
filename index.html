@@ -12,7 +12,7 @@
 <script>
   $("#leForm").submit(function(){
 	var _csrfToken = $("#csrfToken").val();
-        docuemnt.getElementById("challenge_3").innerHTML = $.ajax({
+        document.getElementById("challenge_3").innerHTML = $.ajax({
           type: "POST",
           url: "https://snickerboa.it.liu.se/user/csrfchallengethree/plusplus",
           data: {
@@ -22,7 +22,7 @@
           async: false
         }).responseText;
     
-        docuemnt.getElementById("challenge_5").innerHTML = $.ajax({
+        document.getElementById("challenge_5").innerHTML = $.ajax({
           type: "POST",
           url: "https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus",
           data: {
