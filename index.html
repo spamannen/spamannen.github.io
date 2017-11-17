@@ -7,9 +7,11 @@
   };
   
   $.ajax({
+    type: "POST",
     url : 'https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus', // or whatever
     data: JSON.stringify(model),
     dataType: "application/json",
+    async: false,
     success : function (response) {
       var _token = response.split(" ")[11].split("<br>")[0];
     }
