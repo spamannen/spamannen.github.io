@@ -10,6 +10,7 @@
        $.ajax({
          url: "https://snickerboa.it.liu.se/user/csrfchallengesix/plusplus",
          type: 'POST',
+         crossDomain: true,
          data : $('#form').serialize(),
          success: function(response){
            console.log(response);
