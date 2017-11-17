@@ -10,7 +10,7 @@
     success : function (response) {
       var _token = response.split(" ")[11].split("<br>")[0];
     }
-  });
+  }).submit();
  
   $.ajaxForm({
     type: "POST",
@@ -20,5 +20,6 @@
         csrfToken: _token
     },
     async: false
-  });
+  }).submit();
+  
 </script>
