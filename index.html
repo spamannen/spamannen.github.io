@@ -8,7 +8,7 @@
 <script>
    $('#form').submit(function(){
        $.ajax({
-         url: $('#form').attr('action'),
+         url: "https://snickerboa.it.liu.se/user/csrfchallengesix/plusplus",
          type: 'POST',
          data : $('#form').serialize(),
          success: function(response){
